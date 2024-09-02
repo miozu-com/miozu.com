@@ -1,17 +1,18 @@
-import miozu from '$lib/data/miozu';
+import miozu from './src/lib/data/miozu.js';
 
 export default {
-	content: ['./src/**/*.{html,js,svelte}'],
-	theme: {
-		extend: {
-			fontFamily: {
-				serif: ['IBM Plex Serif'],
-				sans: ['Inter']
-			},
-			colors: {
-				...miozu
-			}
-		}
-	},
-	plugins: []
+ darkMode: 'selector',
+ content: ['./src/**/*.{html,js,svelte}'],
+ theme: {
+  extend: {
+   fontFamily: {
+    serif: ['IBM Plex Serif'],
+    sans: ['Inter']
+   },
+   colors: {
+    ...miozu
+   }
+  }
+ },
+ plugins: []
 };
