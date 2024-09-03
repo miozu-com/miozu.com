@@ -10,7 +10,7 @@
 <header bind:this={headerEl}>
  <div id="logo">miozu</div>
  <div class="flex items-center">
-  <a href={githubRepo} target="_blank" class="cursor-pointer">
+  <a href={githubRepo} _target="blanc" class="cursor-pointer">
    <Github class="size-5" />
   </a>
   <ThemeSwitcher class="mr-4" />

@@ -1,6 +1,6 @@
 {
   "name": "miozu.com",
-  "version": "0.0.20240901",
+  "version": "0.0.20240902",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@melt-ui/pp": "^0.3.2",
     "@sveltejs/adapter-cloudflare": "^4.7.2",
     "@sveltejs/kit": "^2.5.25",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
@@ -29,5 +30,9 @@
   "type": "module",
   "volta": {
     "node": "20.17.0"
+  },
+  "dependencies": {
+    "@melt-ui/svelte": "^0.83.0",
+    "lucide-svelte": "^0.438.0"
   }
 }

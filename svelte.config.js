@@ -1,13 +1,16 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import {vitePreprocess} from '@sveltejs/vite-plugin-svelte';
+import {preprocessMeltUI, sequence} from '@melt-ui/pp';
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
  extensions: ['.svelte', '.md'],
  kit: {
   adapter: adapter()
  },
- preprocess: vitePreprocess()
+ preprocess: sequence([
+  vitePreprocess(),
+  preprocessMeltUI() // leave at the end!
+ ])
 };
 
 export default config;

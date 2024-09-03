@@ -1,4 +1,4 @@
 <script>
 </script>
 
-<div class=""></div>
+<div class="dark:text-red">body</div>

@@ -1,7 +1,7 @@
 import miozu from './src/lib/data/miozu.js';
 
 export default {
- darkMode: 'selector',
+ darkMode: ['selector'],
  content: ['./src/**/*.{html,js,svelte}'],
  theme: {
   extend: {
