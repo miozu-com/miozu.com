@@ -1,8 +1,7 @@
 name = "miozu-com"
 account_id = "2cb3c46a2b9148d3cb659beec2521dc7"
 
-main = "./.cloudflare/worker.js"
-site.bucket = "./.cloudflare/public"
+main = "./.svelte-kit/cloudflare/_worker.js"
 
 build.command = "pnpm build"
 
