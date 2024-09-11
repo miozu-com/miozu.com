@@ -1,8 +1,10 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import {vitePreprocess} from '@sveltejs/vite-plugin-svelte';
-import {preprocessMeltUI, sequence} from '@melt-ui/pp';
 
-const config = {
+export default {
+ compilerOptions: {
+  runes: true
+ },
  extensions: ['.svelte', '.md'],
  kit: {
   adapter: adapter({
@@ -18,10 +20,5 @@ const config = {
    }
   })
  },
- preprocess: sequence([
-  vitePreprocess(),
-  preprocessMeltUI() // leave at the end!
- ])
+ preprocess: [vitePreprocess()]
 };
-
-export default config;

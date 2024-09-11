@@ -1,8 +1,7 @@
 <script>
  import {browser} from '$app/environment';
- import {Sun, Moon} from 'lucide-svelte';
 
- let isDarkMode = true;
+ let isDarkMode = $state(true);
 
  function handleToggleIsDarkMode() {
   isDarkMode = !isDarkMode;
@@ -12,7 +11,8 @@
   : document.documentElement.classList.remove('dark');
  }
 
- $: if (browser) {
+ $effect(() => {
+  if (!browser) return;
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
    document.documentElement.classList.add('dark');
    isDarkMode = true;
@@ -20,16 +20,16 @@
    document.documentElement.classList.remove('dark');
    isDarkMode = false;
   }
- }
+ });
 </script>
 
 <div>
- <input checked={isDarkMode} on:click={handleToggleIsDarkMode} type="checkbox" id="theme-toggle" />
+ <input checked={isDarkMode} onclick={handleToggleIsDarkMode} type="checkbox" id="theme-toggle" />
  <label for="theme-toggle">
   {#if isDarkMode}
-   <Moon class="size-5" />
+   +
   {:else}
-   <Sun class="size-5" />
+   -
   {/if}
  </label>
 </div>
